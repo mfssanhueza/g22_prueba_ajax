@@ -1,5 +1,6 @@
 class EnterprisesController < ApplicationController
   before_action :set_enterprise, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:show]
 
   # GET /enterprises
   # GET /enterprises.json
@@ -11,6 +12,8 @@ class EnterprisesController < ApplicationController
   # GET /enterprises/1
   # GET /enterprises/1.json
   def show
+    @claims = @enterprise.claims.order(created_at: :desc)
+    @claim = Claim.new
   end
 
   # GET /enterprises/new

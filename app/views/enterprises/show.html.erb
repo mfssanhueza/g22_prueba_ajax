@@ -1,9 +1,33 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @enterprise.name %>
-</p>
+<div class="row">
+  <p>
+    <strong>Name:</strong>
+    <%= @enterprise.name %>
+  </p>
+  <div class="col-md-6" id='enterprise_claim'>
+    <% @claims.each do |claim| %>
+    <p>
+      <%= claim.title %>
+    </p>
+    <p>
+    <%= claim.content %></p>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+    <%= form_with(model: [@enterprise, @claim]) do |form| %>
+    <div class="field">
+      <%= form.label 'Título reclamo:' %>
+      <%= form.text_field :title %>
+      <br>
+      <%= form.label 'Reclamo:' %>
+      <%= form.text_area :content %>
+    </div>
+    <div class="actions">
+      <%= form.submit 'Dejar reclamo', class:'btn btn-success' %>
+    </div>
+    <% end %>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_enterprise_path(@enterprise) %> |
 <%= link_to 'Back', enterprises_path %>
