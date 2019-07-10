@@ -1,0 +1,6 @@
+<tr id='<%="row_#{enterprise.id}"%>'>
+    <td id="enterprise_<%= enterprise.id %>"><%= enterprise.name %></td>
+    <td><%= link_to 'Ver', enterprise %></td>
+    <td><%= link_to 'Editar', edit_enterprise_path(enterprise), class: 'edit_enterprise', data: { remote: true } %></td>
+    <td><%= link_to 'Eliminar', enterprise, class: "delete_enterprise", method: :delete, data: { remote: true } %></td>
+</tr>
