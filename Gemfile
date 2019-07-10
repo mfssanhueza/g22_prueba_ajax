@@ -7,6 +7,7 @@ ruby '2.6.2'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
+gem 'webpacker', group: :production
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -16,6 +17,7 @@ gem 'devise', git: 'https://github.com/plataformatec/devise.git'
 gem 'uglifier', '>= 1.3.0'
 #gem 'jquery-rails'
 gem 'activeadmin'
+
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
